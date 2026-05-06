@@ -1,0 +1,25 @@
+databaseChangeLog:
+    - changeSet:
+        id: create-couriers-table
+        author: laman
+        changes:
+          - createTable:
+              tableName: couriers
+              columns:
+                - column:
+                    name: courier_id
+                    type: BIGINT
+                    autoIncrement: true
+                    constraints:
+                      primaryKey: true
+                      nullable: false
+                - column:
+                    name: courier_name
+                    type: VARCHAR(255)
+                    constraints:
+                      nullable: false
+                - column:
+                    name: status
+                    type: VARCHAR(50)
+                    constraints:
+                      nullable: false

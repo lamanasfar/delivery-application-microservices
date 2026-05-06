@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/couriers")
 public class CourierController {
     private final CourierService courierService;
-    private final CourierRepository courierRepository;
+
     @GetMapping("/availiable")
     public List<CourierResponseDto> getAvailiableCouriers() {
         return courierService.getCouriersAvaliable();

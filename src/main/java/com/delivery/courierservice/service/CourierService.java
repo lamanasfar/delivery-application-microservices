@@ -27,11 +27,18 @@ public class CourierService {
                 .map(courier ->CourierMapper.mapToCourierToDto(courier))
                 .toList();
 
+
     }
     public List<CourierResponseDto> getCouriers() {
         return courierRepository.findAll()
                 .stream()
                 .map(courier ->CourierMapper.mapToCourierToDto(courier))
                 .toList();
+    }
+    public void updateCourierStatus(CourierStatus courierStatus,Long courierId) {
+        var courier = courierRepository.findById(courierId).orElseThrow(() -> new RuntimeException("Courier not found"));
+        courier.setCourierStatus(courierStatus);
+        courierRepository.save(courier);
+
     }
 }
