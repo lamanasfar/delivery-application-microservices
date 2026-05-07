@@ -13,5 +13,7 @@ public class RabbitConfig {
     @Bean
     public Queue orderQueue() {
         return new Queue(ORDER_QUEUE);
+
     }
+
 }

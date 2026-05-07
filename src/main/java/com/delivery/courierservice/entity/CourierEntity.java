@@ -29,6 +29,6 @@ public class CourierEntity {
 
     @Column(name = "status")
     private CourierStatus courierStatus;
-
+g
 
 }
